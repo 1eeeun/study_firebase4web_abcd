@@ -2,7 +2,7 @@
 
 > 2016/07~08 장승빈 with ABCD(ABout CoDing)
 
-## Firebase의 Authentication 실습용 소스 입니다.
+## Firebase for Web 스터디의 실습용 소스 입니다.
 
 실습용 소스입니다.
 
