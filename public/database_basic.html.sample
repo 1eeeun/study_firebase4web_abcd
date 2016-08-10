@@ -84,38 +84,12 @@
   <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script type="text/javascript" src="/js/materialize.min.js"></script>
 
-  <script src="https://www.gstatic.com/firebasejs/3.2.1/firebase.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-auth.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-database.js"></script>
-  <script src="/fireinit.js"></script>
-    <script type="text/javascript">
-    /* TODO 2. 버튼을 눌렀을 경우 구글 인증 동작하게 */
-    $("#BTN_GOOGLE_LOGIN").click(function() {
-      /* 구글 인증을 provider 변수에 대체 */
-      var provider = new firebase.auth.GoogleAuthProvider();
-      firebase.auth().signInWithPopup(provider) // 팝업 대신 페이지 이동을 할 경우 signInWithRedirect로 변경
-        .then(function(result) { // 로그인이 성공 했을시
-      }).catch(function(error) { // 로그인이 실패 했을시 = 에러를 핸들링
-        var errorMessage = error.message; // 에러 메세지
-        console.log(errorMessage);
-      });
-    });
-
-    /* TODO 3. 데이터 베이스 '/메세지' 쓰기 */
-    // firebase.database().ref('/메세지').set('안녕하세요!');
-
-    /* TODO 4. DB에서 '/메세지'값 읽어오기 */
-    firebase.database().ref('/메세지').on('value', function(snapshot) {
-      var message = snapshot.val();
-      $("#DB_MESSAGE").text(message);
-    });
-
-    /* TODO 5. DB 메세지 값 변경 */
-    $("#BTN_UPDATE").click(function(){
-      var new_message = $("#INPUT_MESSAGE").val();
-      firebase.database().ref('/메세지').set(new_message);
-    });
+  <!-- TODO 1. firebase SDK 링크 -->
+  <script type="text/javascript">
+  /* TODO 2. 버튼을 눌렀을 경우 구글 인증 동작하게 */
+  /* TODO 3. 데이터 베이스 '/메세지' 쓰기 */
+  /* TODO 4. DB에서 '/메세지'값 읽어오기 */
+  /* TODO 5. DB 메세지 값 변경 */
 
   </script>
 
