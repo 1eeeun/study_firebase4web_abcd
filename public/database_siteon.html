@@ -81,32 +81,10 @@
   <script type="text/javascript" src="/js/materialize.min.js"></script>
 
   <!-- TODO 1. firebase SDK 링크 -->
-  <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-auth.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-database.js"></script>
-  <script src="/fireinit.js"></script>
   <script type="text/javascript">
     /* TODO 1. 버튼을 눌렀을 경우 구글 인증 동작하게 */
-    $('#BTN_GOOGLE_LOGIN').click(function(){
-      var provider = new firebase.auth.GoogleAuthProvider();
-      firebase.auth().signInWithPopup(provider).then(function(result) {
-      }).catch(function(error) {
-        alert(error.message)
-      });
-    });
 
     /* TODO 1. 인증 해제 */
-    $('#BTN_LOGOUT').click(function(){
-      // TODO 4. DB의 변화를 더이상 감지 하지 않음
-      // TODO 3. 접속상태값을 변경
-      // 인증 해제
-      firebase.auth().signOut().then(function() {
-        alert("인증이 해제되었습니다.");
-      }, function(error) {
-        alert(error.message);
-      });
-    });
 
     /* TODO 2. 접속한 경우 Database의 상태 변경 */
     firebase.auth().onAuthStateChanged(function(user) {

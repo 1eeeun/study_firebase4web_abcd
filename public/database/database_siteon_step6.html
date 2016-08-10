@@ -138,11 +138,11 @@
     });
 
     // 6. 페이지 떠나게 되면
-   $(window).on("beforeunload", function(){
-     if(_uid != null){
-       firebase.database().ref("/onUsers/"+_uid+"/siteOn").set(0); // 상태 변경
-     }
-   });
+    $(window).on("beforeunload", function(){
+      if(_uid != null){
+        firebase.database().ref("/onUsers/"+_uid+"/siteOn").set(0); // 상태 변경
+      }
+    });
 
   </script>
 

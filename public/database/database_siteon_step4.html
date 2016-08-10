@@ -122,6 +122,7 @@
         // 4. 상태가 바뀔 때를 감지할 리스너(JS옵저버) 장착
         firebase.database().ref('/onUsers/').on('value', function(snapshot_users) {
           // TODO 5. 유저를 하나씩 읽어오기
+          console.log(snapshot_users.val());
         });
         // TODO 7. 디비에 접속 끊길때 이벤트 감지하하면 특정값 변경 (siteOn 상태를 0으로 변경)
       } else { // 2. 인증이 해제 되거나 인증되지 않은 경우
